@@ -36,7 +36,10 @@
 [jq选项卡](http://linkkaishi.github.io/jquery/jquery-top.html)http://linkkaishi.github.io/jquery/jquery-top.html<br>
 [jq-slide效果](http://linkkaishi.github.io/jquery/jq-效果-slide.html)http://linkkaishi.github.io/jquery/jq-效果-slide.html<br>
 [jq-淡出淡入效果](http://linkkaishi.github.io/jquery/jq-效果-fading.html)http://linkkaishi.github.io/jquery/jq-效果-fading.html<br>
-[jq-animation](http://linkkaishi.github.io/jquery/jq-效果-animate.html)http://linkkaishi.github.io/jquery/jq-效果- animate.html<br>
-
+<!-- [jq-animation](http://linkkaishi.github.io/jquery/jq-效果- animate.html)
+http://linkkaishi.github.io/jquery/jq-效果- animate.html<br> -->
+[jq-小案例](http://linkkaishi.github.io/jquery/03-1-jquery.html)http://linkkaishi.github.io/jquery/03-1-jquery.html<br>
+## less
+[翻转](http://linkkaishi.github.io/less/index.html)http://linkkaishi.github.io/less/index.html<br>
 
 
