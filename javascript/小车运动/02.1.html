@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="window.clearInterval(set)">停止</button>
+   
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+    <script>
+        //    var imgNode = document.createElement('img');
+        //    imgNode.src = "img/1.png";
+        //    document.body.appendChild(imgNode);
+        //    imgNode.style.top = 0;
+        //    imgNode.style.left =50 +'px';
+        //    var move = function(){
+        //        imgNode.style.top = parseInt(imgNode.style.top) + 10 +'px'
+        //        imgNode.style.left = parseInt(imgNode.style.left) + 20 +'px';
+        //    }
+
+        //    setInterval(function(){
+        //        move();
+        //    },300)
+        //    imgNode.onclick=function(){
+        //        clearInterval();
+        //    }
+        var Car = function (x, y, imgsrc, speed) {
+            this.x = x;
+            this.y = y;
+            this.imgsrc = imgsrc;
+            this.speed = speed;
+            this.draw = function () {
+                this.imgNode = document.createElement('img');
+                this.imgNode.src = this.imgsrc;
+                document.body.appendChild(this.imgNode);
+                this.imgNode.style.top = this.x + 'px';
+                this.imgNode.style.left = this.y + 'px';
+            }
+
+        }
+        Car.prototype.move = function () {
+            this.imgNode.style.left = parseInt(this.imgNode.style.left) + this.speed + 'px';
+        }
+        var car1 = new Car(0, 0, 'img/car1.png', 10);
+        car1.draw();
+        var car2 = new Car(100, 0, 'img/car2.png', 15);
+        car2.draw();
+        var car3 = new Car(200, 0, 'img/car1.png', 5);
+        car3.draw();
+
+        var set = setInterval(function () {
+            car1.move();
+            car2.move();
+            car3.move();
+        }, 300)
+
+    //    var stop = clearInterval( function() {
+    //          set();
+    //     })
+    </script>
+    <script>
+        document.body.onscroll = function(){
+            console.log(xxx);
+        }
+    </script>
+</body>
+
+</html>

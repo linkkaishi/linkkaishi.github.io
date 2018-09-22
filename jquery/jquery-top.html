@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+    <div class="tab-content">
+        <div class="tab-controls">
+            <li class="active">A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+        </div>
+        <div class="tab-items">
+            <li class="active">AAAAAA.</li>
+            <li>BBBBBBBBBB</li>
+            <li>CCCCCCCCCCC</li>
+            <li>DDDDDDDDDDD</li>
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+            background: lightblue;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tab-content {
+            width: 400px;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .tab-content .tab-controls li {
+            width: 25%;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+            background:#23939e;
+        }
+
+        .tab-content .tab-controls li.active {
+            background: #7cbce2;
+        }
+
+        .tab-content .tab-items li {
+            text-align: center;
+            line-height: 100px;
+            display: none;
+        }
+
+        .tab-content .tab-items li.active {
+            background: #7cbce2;
+            display: block;
+        }
+    </style>
+    <script>
+        $('.tab-controls li').click(function(){
+          $(this).addClass('active').siblings().removeClass('active');
+        $(' .tab-content .tab-items li').eq($(this).index()).addClass('active').siblings().removeClass('active');
+        })
+    </script>
+</body>
+</html>

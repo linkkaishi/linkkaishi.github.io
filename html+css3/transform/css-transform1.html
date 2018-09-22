@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div class="big">
+		<div class="box">
+			<div class="img"></div>
+			<div class="text">
+				<h4>Duende</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed vestibulum.</p>
+			</div>
+		</div>
+		<div class="box1">
+			<div class="img1"></div>
+			<div class="text1">
+				<h4>Schadenfreude</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed vestibulum.</p>
+			</div>
+		</div>
+		</div>
+		<style type="text/css">
+			body{
+				margin: 0 auto;
+   				 background: #33281d;
+			}
+			.box {
+				position: relative;
+				display: inline-block;
+			}
+			.big{
+				display: block;
+				margin: 50px auto;
+				width: 1000px;
+			}
+			.box1 {
+				position: relative;
+				display: inline-block;
+			}
+			
+			.img {
+				width: 360px;
+				height: 300px;
+				background: url(img/1.jpg);
+				` transform: rotate(0deg);
+				transition: all 0.5s;
+				/*z-index: 1;*/
+				display: inline-block;
+			}
+			
+			.img1 {
+				width: 360px;
+				height: 300px;
+				background: url(img/3.jpg);
+				transform: rotate(0deg);
+				transition: all 0.5s;
+				/*z-index: 1;*/
+				display: inline-block;
+			}
+			
+			.text {
+				width: 360px;
+				height: 300px;
+				text-align: center;
+				background: rgba(0, 0, 0, 0.7);
+				position: absolute;
+				left: 0;
+				top: 0;
+				transform: rotateY(90deg);
+				transition: all 0.5s;
+				/*	z-index: -1;*/
+				color: white;
+			}
+			
+			h4{
+				font-size: 20px;
+				color: #fff;
+				text-transform: uppercase;
+			}
+			p{
+				font-size: 14px;
+			    line-height: 24px;
+			    color: #fff;
+			}
+			.text1 {
+				width: 360px;
+				height: 300px;
+				text-align: center;
+				background: rgba(0, 0, 0, 0.7);
+				position: absolute;
+				left: 0;
+				top: 0;
+				transform: rotateY(90deg);
+				transition: all 0.5s;
+				/*	z-index: -1;*/
+				color: white;
+			}
+			
+			.box:hover .img {
+				transform: rotateY(90deg);
+				-webkit-transform: rotateY(90deg);
+			}
+			
+			.box:hover .text {
+				transform: rotateY(0deg);
+				-webkit-transform: rotateY(0deg);
+			}
+			
+			.box1:hover .img1 {
+				transform: rotateY(90deg);
+				-webkit-transform: rotateY(90deg);
+			}
+			
+			.box1:hover .text1 {
+				transform: rotateY(0deg);
+				-webkit-transform: rotateY(0deg);
+			}
+		</style>
+	</body>
+
+</html>

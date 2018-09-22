@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+div.dial {
+  width: 650px;
+  height: 600px;
+  background: url(../images/turntable-bg.jpg) no-repeat;
+  position: relative;
+  margin: 0 auto;
+}
+div.dial #turntable {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  top: 60px;
+  left: 120px;
+  transition: all 1s;
+}
+div.dial #pointer {
+  width: 174px;
+  height: 228px;
+  position: absolute;
+  top: 150px;
+  left: 255px;
+}

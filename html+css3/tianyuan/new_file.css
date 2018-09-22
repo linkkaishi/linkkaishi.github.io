@@ -1,0 +1,202 @@
+ul, ol, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background: url(img/banner.jpg) no-repeat;
+	background-size: cover;
+	padding-top: 15px;
+}
+
+nav.top {
+	background: rgba(0, 0, 0, 0.41);
+	width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+	/*height: 54px;*/
+}
+/*nav .top*/
+nav.top ul {
+	/*float: left;*/
+}
+nav.top form {
+	/*float: right;*/
+	line-height: 54px;
+}
+
+nav.top ul li {
+	float: left;
+	line-height: 54px;/*行高*/
+	color: white;
+	padding-top: 4px;
+}
+
+nav.top ul li a {
+	margin: 0 15px;
+	color: white;
+	text-decoration: none; /*文本装饰线*/
+	transition: all .3s;
+}
+
+nav.top ul li:after {
+	/*li:after 伪元素选择器*/
+	content: '/';
+}
+
+nav.top ul li:last-of-type:after {
+	/*li:last-of-type 过滤选择器 */
+	content: '';
+}
+
+nav.top ul li:first-of-type a {
+	color: yellow;
+	border-top: 4px solid yellow;
+}
+nav.top ul li a:hover {
+	color: yellow;
+	border-top: 4px solid yellow;
+}
+
+/*nav.top form*/
+nav.top form {
+	position: relative;
+}
+
+nav.top form input {
+	background: transparent;
+	border: 1px solid white;
+	outline: none;
+	color: white;
+	padding: 5px 10px ;
+	/*background: url(img/search.png) no-repeat right center;*/
+	margin-right: 20px;
+}
+nav.top form input[type=submit] {
+	background: url(img/search.png) no-repeat;
+	padding: 0;
+	width: 22px;
+	height: 22px;
+	border: none;
+	background-position: center;
+	margin-right: 0;
+	position: absolute;
+	right: 25px;
+	top: 16px;
+	cursor: pointer;
+}
+/**/
+
+h1 {
+	color: white;
+	text-align: center;
+	border-top: 4px solid white;
+	border-bottom: 4px solid white;
+	width: 120px;
+	margin: 50px auto;
+}
+
+header .bigbox {
+	width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+header .bigbox .box {
+	background: lightblue;
+	width: 255px;
+	height: 300px;
+	float: left;
+	margin: 0 15px;
+}
+
+
+/*中间*/
+
+section .about {
+	background: #eee;
+	padding-top: 200px;
+	padding-bottom: 30px;
+	overflow: hidden;
+}
+
+.kai {
+	width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.car {
+	float: left;
+}
+
+
+/*.text{
+			float: right;
+		}*/
+
+img {
+	max-width: 100%;
+}
+
+section h3.title {
+	font-size: 36px;
+	margin-top: 0;
+}
+
+section.about.car {
+	width: 400px;
+}
+
+section.about.text {
+	width: 700px;
+	line-height: 24px;
+	color: #666666;
+}
+
+
+/*nav{
+        	background: #37353b;
+        }*/
+
+section.services {
+	background: #37353b;
+}
+
+
+/**/
+
+nav.work {
+	background: #eee;
+	overflow: hidden;
+}
+
+nav.work .card {
+	position: relative;
+	width: 285px;
+	height: 245px;
+	float: left;
+}
+
+nav.work .card img:first-of-type {
+	width: 285px;
+	height: 245px;
+}
+
+nav.work .card .textbox {
+	transform: scale(0);
+	transition: all .5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 90px 110px;
+	background: rgba(15, 16, 15, 0.16);
+	width: 65px;
+	height: 65px;
+}
+
+nav.work .card:hover .textbox {
+	transform: scale(1);
+	box-shadow: 0 0 10px 0 white;
+}

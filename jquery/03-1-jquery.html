@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+</head>
+
+<body>
+    <div id="box"></div>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        //    window.onload = function(){
+        //        alert('aaa')
+        //    }
+        //    window.onload = function(){
+        //        alert('ccc')
+        //    }
+
+        //  window只可以显示一个
+
+        //    $(document).ready(function(){
+        //        alert('bbb')
+        //    })
+
+        //    $(document).ready(function(){
+        //        alert("ccc")
+        //    })
+        //    $(function(){
+        //        alert('ddd')
+        //    })
+        //    $可以显示多个
+        //  $('#box').html('hello ');
+        document.getElementById('box').innerHTML = 'hello';
+    </script>
+
+    <div id="boxa" style="display:none;width: 100px;height: 100px;background: lightblue"></div>
+    <script>
+        //  $('#boxa').html('hello').show();
+        $('#box').click(function () {
+            $('#boxa').html('hello').show();
+        })
+    </script>
+    <hr>
+    <div id="boxb">
+        <div class="title" style="background: #EEE;">点我</div>
+        <div id="content" style="display:none"></div>
+    </div>
+    <style>
+        .active {
+            background: red;
+        }
+
+        .acti {
+            background: blue;
+        }
+    </style>
+    <script>
+        $('.title').click(function () {
+            $('#content').html('hello').show().addClass('active');
+        })
+    </script>
+    <div id="Tmp">测试文本</div>
+    <div id="Out"></div>
+    <script>
+        // var tmpdiv = document.getElementById('Tmp')
+        // var outdiv = document.getElementById('Out')
+        // var tmp = tmpdiv.innerHTML
+        // outdiv.innerHTML = tmp
+
+        // var tmpdiv = $('#Tmp')
+        // var outdiv = $("#Out")
+        // var tmp = tmpdiv.html()
+        // outdiv.html = tmp
+        var tmpdiv = document.getElementById('Tmp')
+        var tmpdiv1 = $('#Tmp')
+        // tmpdiv.innerHTML = 'tmpdiv'
+        // tmpdiv1.html('tmpdiv')
+        $('tmpdiv').html('dom 对象 转 jq')
+        tmpdiv1[0].innerHTML = 'jp'
+    </script>
+
+
+
+    <hr>
+    <div class="tab">
+        <span class="box1">A</span>
+        <span class="box2">B</span>
+        <span class="box3">C</span>
+        <div class="bigA">1</div>
+        <div class="bigB">2</div>
+        <div class="bigC">3</div>
+    </div>
+    <style>
+       .tab{
+           position: relative;
+       }
+        span {
+            background: #4b818a;
+            width: 60px;
+            height: 60px;
+            display: block;
+            text-align: center; 
+            float: left;
+        }
+        /* .hide{
+            width: 40px;
+            height: 40px;
+            background:lemonchiffon;
+         
+        } */
+        div[class^=big]{
+           position: absolute;
+           top: 60px;
+           left: 0px;
+            width:180px;
+            height: 60px; 
+            background:#1aa3b9;;
+            display:none;
+            
+            
+        }
+        .activ{
+            background: #1aa3b9;
+        }
+       
+    </style>
+    <script>
+        $('.box1').click(function(){
+            $('.bigA').show();
+            $(this).addClass('activ')
+            $('.bigB').hide();
+            $('.bigC').hide();
+            $('.box2').removeClass('activ');
+           $('.box3').removeClass('activ');
+        })
+       $('.box2').click(function(){
+           $('.box1').removeClass('activ');
+           $('.box3').removeClass('activ');
+           $('.bigA').hide();
+           $('.bigC').hide();
+           $('.bigB').show();
+           $(this).addClass('activ')
+       })
+       $('.box3').click(function(){
+           $('.box2').removeClass('activ');
+           $('.box1').removeClass('activ');
+           $('.bigB').hide();
+           $('.bigA').hide();
+           $('.bigC').show();
+           $(this).addClass('activ')
+       })
+
+
+    </script>
+</body>
+
+</html>

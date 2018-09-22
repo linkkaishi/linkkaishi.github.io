@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>开关</h2>
+		<label class="switch">
+			<input type="checkbox" checked=""/>
+			<div class="white"></div>
+		</label>
+		<label class="switch">
+			<input type="checkbox" />
+			<div class="white round"></div>
+			</label>
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+			.switch input {
+				display: none;
+			}
+			label.switch{
+				width:80px;
+				height:50px;
+				/*background: red;*/
+				display: inline-block;
+				position: relative;
+			}
+			label.switch div.white{
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #ccc;
+				-webkit-transition: .4s;
+				transition: .4s;
+			}
+			label.switch div.white:before {
+				width:30px;
+				height: 30px;
+				background-color: white;
+				content: '';
+				left: 8px;
+				bottom: 11px;
+				position: absolute;	
+				-webkit-transition: .4s;
+				transition: .4s;
+			}
+			input:checked+.white:before {
+				-webkit-transform: translateX(35px);
+				-ms-transform: translateX(35px);
+				transform: translateX(35px);
+			}
+			input:checked+div.white {
+				background-color:red;
+			}
+			input:focus+div.white {
+				box-shadow: 0 0 1px #2196F3;
+			}
+			.white.round {
+				border-radius: 24px;
+			}
+			
+			.white.round:before {
+				border-radius: 50%;
+			}
+		</style>
+	</body>
+</html>

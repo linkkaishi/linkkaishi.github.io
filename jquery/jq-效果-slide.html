@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<body>
+    <div id="flip">点我滑下面板</div>
+    <div id="panel">Hello world!</div>
+    <hr>
+    <br>
+    <br>
+    <div id="flip1">点我上拉面板</div>
+    <div id="pane2">Hello world!</div>
+    <br>
+    <br>
+    <div id="flip2">来回点</div>
+    <div id="pane3">Hello world!</div>
+    <style>
+        body{
+            margin: 0;
+        }
+        #flip,#flip1,#flip2{
+            padding: 10px;
+            background: lightblue;
+            text-align: center;
+            border:1px solid black;
+        }
+        #panel,#pane3{
+            padding: 50px;
+            background: lightblue;
+            text-align: center;
+            border:1px solid black;
+            display: none;
+        }
+        #pane2{
+            padding: 50px;
+            background: lightblue;
+            text-align: center;
+            border:1px solid black;      
+        }
+    </style>
+    <script>
+        $('#flip').click(function(){
+            // $('#panel').show();
+            $('#panel').slideDown();
+        })
+    </script>
+    <script>
+            $('#flip1').click(function(){
+                // $('#panel').show();
+                $('#pane2').slideUp();
+            })
+        </script>
+            <script>
+                    $('#flip2').click(function(){
+                        // $('#panel').show();
+                        $('#pane3').slideToggle();
+                    })
+                </script>
+    
+    <!-- <script>
+        var flip = document.getElementById('flip');
+        var panel = document.getElementById('panel');
+        flip.onclick = function(){
+            panel.style.display='block'
+        }
+    </script> -->
+
+</body>
+
+</html>

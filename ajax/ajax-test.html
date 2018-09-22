@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+    <h2>使用 AJAX 修改该文本内容</h2>
+    <button id="bth" onclick="send()">点我</button>
+    <style>
+        #demo {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        var xmlhttp;
+        //  var bth1 =document.getElementById('bth');
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest()
+        } else {
+            xmlhttp = new ActiveXobject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                // console.log(xmlhttp.readyState)
+                document.getElementById('demo').innerHTML = xmlhttp.responseText;
+            } else if (xmlhttp.readyState <= 3) {
+                document.getElementById('demo').innerHTML = '请稍等';
+            } else if (xmlhttp.readyState === 4 && xmlhttp.status === 404) {
+                document.getElementById('demo').innerHTML = '文件丢失了';
+            }
+            console.log(xmlhttp.response)
+            console.log(xmlhttp.responseText)
+            console.log(xmlhttp.status)
+            console.log(xmlhttp.statusText)
+            console.log(xmlhttp.readyState)
+        }
+
+        function send() {
+            xmlhttp.open('GET', '../asset/data/js-ajax.txt', true);
+            xmlhttp.send();
+
+        }
+        console.log(xmlhttp.response)
+        console.log(xmlhttp.responseText)
+        console.log(xmlhttp.status)
+        console.log(xmlhttp.statusText)
+        console.log(xmlhttp.readyState)
+        //   bth1.onclick = function(){
+        //     document.getElementById("null").innerHTML = xmlhttp.responseText;
+        //   }
+    </script>
+</body>
+
+</html>

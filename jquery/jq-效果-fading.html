@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<body>
+    <div id="box">点我</div><br>
+    <div id="a">a</div><br>
+    <div id="b">b</div><br>
+    <div id="c">c</div><br>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 50px;
+            background: lightcyan;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        #a,
+        #b,
+        #c {
+            width: 80px;
+            height: 80px;
+            /* display:none;    */
+            display: block;
+        }
+
+        #a {
+            background: red;
+        }
+
+        #b {
+            background: lightcyan;
+        }
+
+        #c {
+            background: blue;
+        }
+    </style>
+    <!-- <script>
+     $('#box').click(function(){
+         $('#a').fadeIn(500);
+         $('#b').fadeIn(1000);
+         $('#c').fadeIn(1500);
+     })
+    </script> -->
+    <!-- <script>
+     $('#box').click(function(){
+         $('#a').fadeOut(500);
+         $('#b').fadeOut(1000);
+         $('#c').fadeOut(1500);
+     })
+    </script> -->
+    <!-- <script>
+        $('#box').click(function () {
+            $('#a').fadeToggle(500);
+            $('#b').fadeToggle(1000);
+            $('#c').fadeToggle(1500);
+        })
+    </script> -->
+  <script>
+        $('#box').click(function () {
+            $('#a').fadeTo("slow",0.7);
+            $('#b').fadeTo("slow",0.5);
+            $('#c').fadeTo("slow",0.1);
+        })
+    </script>
+</body>
+
+</html>

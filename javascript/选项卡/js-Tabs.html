@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab Control</title>
+</head>
+<body>
+<div class="bigbox">
+    <div class="boxa">
+        <li class="active a">林</li>
+        <li class="a">凯</li>
+        <li class="a">士</li>
+       
+    </div>
+    <div class="boxb">
+        <li class="active">London is the capital city of England. </li>
+        <li>Paris is the capital of France</li>
+        <li>Tokyo is the capital of Japan.</li>
+    </div>
+</div>
+<style>
+    body {
+        margin: 0;
+        background: lightblue;
+    }
+    li {
+        list-style: none;
+    }
+    .bigbox {
+        width: 600px;
+        margin: 0 auto;
+        color: white;
+    }
+    .bigbox .boxa li {
+        width: 200px;
+        float: left;
+        line-height: 100px;
+        text-align: center;
+        background:#0d538a;
+    }
+    .bigbox .boxa li.active {
+       
+        background:#005faf;
+    }
+    .bigbox .boxb li {
+        text-align: center;
+        line-height: 300px;
+        display:none;
+    }
+    .bigbox .boxb li.active {
+        background:url(images/s1.jpg);
+        display: block;
+        background-size: cover;
+    }
+</style>
+<script>
+    var tabControls = document.querySelectorAll('.bigbox .boxa li');
+    var tabItems = document.querySelectorAll('.bigbox .boxb li');
+
+  
+    var siblings = function (ele) {
+        var nodes = [];
+        var allNodes = ele.parentNode.children;
+        for (var i = 0; i < allNodes.length; i++) {
+            if (allNodes[i] !== ele) {
+                nodes.push(allNodes[i]);
+            }
+        }
+        return nodes;
+    };  
+    var addClass = function (element, className) {
+        var oldClass = element.className;
+        var classArray = oldClass.split(' ');
+        if (classArray.indexOf(className) === -1) {
+            classArray.push(className);
+        }
+        element.className = classArray.join(' ').trim();
+    };
+    var removeClass = function (element, className) {
+        var oldClass = element.className;
+        var classArray = oldClass.split(' ');
+        if (classArray.indexOf(className) !== -1) {
+            classArray.splice(classArray.indexOf(className), 1);
+        }
+        if (classArray.length === 0) {
+            element.removeAttribute('class');
+        } else {
+            element.className = classArray.join(' ').trim();
+        }
+    };
+    for (var i = 0; i < tabControls.length; i++) {
+        tabControls[i].index = i;
+        tabControls[i].onclick = function () {   
+            addClass(this,'active');
+            var otherTabControls = siblings(this);
+            for (var j = 0; j < otherTabControls.length; j++) {
+                removeClass(otherTabControls[j], 'active');
+            } 
+            addClass(tabItems[this.index],'active');          
+            var otherTabItems = siblings(tabItems[this.index]);
+            for (var h = 0; h < otherTabItems.length; h++) {
+                removeClass(otherTabItems[h], 'active');
+            }
+        }
+    }
+</script>
+</body>
+</html>

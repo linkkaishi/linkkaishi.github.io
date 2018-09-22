@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="dem"></div>
+        <button onclick="getdata()" type="button" class="btn btn-warning ">Warning</button>
+        <!-- <button onclick="getdata()">获取数据</button> -->
+    </div>
+
+    <style>
+        body{
+            background: #adecd2;
+        }
+        button{
+            position: fixed;
+        }
+    </style>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        var APIurl = 'https://www.apiopen.top/femaleNameApi?page=';
+        var page = 1;
+        var json;
+
+        function getdata() {
+            var currentUrl = APIurl + page;
+            xmlhttp.open('get', currentUrl);
+            xmlhttp.send();
+            page++
+        }
+        xmlhttp.onreadystatechange = function () {
+            // console.log(xmlhttp.response.data)
+            // json =xmlhttp.responseText;
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                json = JSON.parse(xmlhttp.responseText);
+                // console.log(json.data[0])
+                for (var i = 0; i < json.data.length; i++) {
+                    console.log(json.data[i])
+                    // var imgNOde = new Image();
+                    var divNode = document.createElement('div');
+                    divNode.innerHTML = json.data[i].femalename;
+                    divNode.style.textAlign = 'center';
+                    divNode.style.marginTop = '10px'
+                    // console.log(divNode)
+                    document.body.appendChild(divNode);
+
+                }
+            }
+
+        }
+        // var json = {
+        //     "code": 200,
+        //     "msg": "成功!",
+        //     "data": [{
+        //         "femalename": "﻿花花世界丶小风流"
+        //     }, {
+        //         "femalename": "回忆似风不可追"
+        //     }, {
+        //         "femalename": "向阳花.永不低头"
+        //     }, {
+        //         "femalename": "纠结需要的心痛゛"
+        //     }, {
+        //         "femalename": "九片棱角的灬回忆"
+        //     }, {
+        //         "femalename": "斑马线上的妖精"
+        //     }, {
+        //         "femalename": "各种高潮各种飘"
+        //     }, {
+        //         "femalename": "舊城舊事就回憶ず"
+        //     }, {
+        //         "femalename": "有打有闹有情调づ"
+        //     }, {
+        //         "femalename": "如果你還不明白。"
+        //     }, {
+        //         "femalename": "泼墨挥笔画中仙"
+        //     }, {
+        //         "femalename": "迷途在北极的鱼"
+        //     }, {
+        //         "femalename": "猴子死了谁偷桃丶"
+        //     }, {
+        //         "femalename": "今夕何处觅良人"
+        //     }, {
+        //         "femalename": "只想陪在你身边"
+        //     }, {
+        //         "femalename": "十里长亭花落尽"
+        //     }, {
+        //         "femalename": "丶秋雨萌萌入凉意"
+        //     }, {
+        //         "femalename": "海岛陌安逝暮梦"
+        //     }, {
+        //         "femalename": "上帝是一种信仰"
+        //     }, {
+        //         "femalename": "我的男人请尊重"
+        //     }]
+        // }
+    </script>
+</body>
+
+</html>

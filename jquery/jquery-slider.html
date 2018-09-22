@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<body>
+    <div class="carousel">
+        <div class="carousel-content">
+            <li class="a">1</li>
+            <li class="b">2</li>
+            <li class="c">3</li>
+            <li class="d">4</li>
+        </div>
+        <div class="carousel-control">
+            <span class="prev">prev</span>
+            <span class="next">next</span>
+        </div>
+        <div class="carousel-pagination"></div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .carousel {
+            width: 300px;
+            height: 200px;
+            background: red;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel .carousel-content {
+            width: 1200px;
+            /* transition: all 3s; */
+        }
+
+        .carousel .carousel-content li {
+            width: 300px;
+            height: 200px;
+            float: left;
+        }
+
+        .carousel .carousel-content li.a {
+            background: lightgreen;
+        }
+
+        .carousel .carousel-content li.b {
+            background: lightcoral;
+        }
+
+        .carousel .carousel-content li.c {
+            background: lightblue;
+        }
+
+        .carousel .carousel-content li.d {
+            background: lightseagreen;
+        }
+
+        .carousel .carousel-control {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 36px;
+        }
+
+        .carousel .carousel-control span {
+            line-height: 36px;
+            background: orange;
+            display: inline-block;
+        }
+
+        .carousel .carousel-control span.prev {
+            float: left;
+        }
+
+        .carousel .carousel-control span.next {
+            float: right;
+        }
+
+        .carousel-pagination i {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            background: white;
+            margin: 0 5px;
+            border-radius: 50%;
+        }
+        .carousel-pagination i.active{
+            background: orangered;
+        }
+        /* .carousel-pagination p {
+            width: 10px;
+            height: 10px;
+            display: block;
+            background:black; */
+        /* margin: 0 5px;
+            border-radius: 50%; */
+        /* } */
+        .carousel-pagination {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        // $('.next').click(function () {
+        //     $('.carousel-content li').eq(0).animate({
+        //         'margin-left': "-150px"
+        //     }, 2000, function () {
+        //         $('.carousel-content li').eq(0).css('margin-left', "0").appendTo('.carousel-content');
+        //     })
+        // })
+
+
+        // jQuery 杂项 each()方法可以根据图片个数生成对应函数里面内容
+        $('.carousel-content li').each(function () {
+            $('.carousel-pagination').append('<i></i>')
+            // $('.carousel-pagination').append('<p>222</p>')
+        })
+        $('.carousel-pagination i').first().addClass('active');
+        //  $('.carousel-pagination').append('<i></i>')
+        //  $('.carousel-pagination').append('<i></i>')
+        //  $('.carousel-pagination').append('<i></i>')
+        //  $('.carousel-pagination').append('<i></i>')
+
+        var old = $('.carousel-content li');
+
+        $('.carousel-pagination i').click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            if ($(this).index() > old.index($('.carousel-content li:eq(0)'))) {
+                //    console.log($(this).index())
+                old.eq($(this).index()).insertAfter('.carousel-content li:eq(0)');
+                $('.carousel-content').animate({
+                    'margin-left': "-300px"
+                }, 2000, function () {
+                    $('.carousel-content').css('margin-left', "0").find('li').eq(0).appendTo(
+                        '.carousel-content');
+                })
+            } else if ($(this).index() < old.index($('.carousel-content li:eq(0)'))) {
+                old.eq($(this).index()).insertBefore('.carousel-content li:eq(0)');
+                $('.carousel-content').css({
+                    'margin-left': '-300px'
+                }).animate({
+                    'margin-left': '0'
+                }, 2000)
+            }
+        })
+
+        $('.next').click(function () {
+            var nextIndex = old.index($('.carousel-content li:eq(0)')) + 1;
+            if (nextIndex >= old.length) {
+                nextIndex = 0;
+            }
+            old.eq(nextIndex).insertAfter('.carousel-content li:eq(0)');
+            $('.carousel-content li').eq(0).animate({
+                'margin-left': "-300px"
+            }, 2000, function () {
+                $('.carousel-content li').eq(0).css('margin-left', "0").appendTo('.carousel-content');
+            })
+            $('.carousel-pagination i').eq(nextIndex).addClass('active').siblings().removeClass('active');
+        })
+
+        // 上一张
+        $('.prev').click(function () {
+            var prevIndex = old.index($('.carousel-content li:eq(0)')) - 1;
+            if (prevIndex < 0) {
+                prevIndex = old.length - 1;
+            }
+            $('.carousel-pagination i').eq(prevIndex).addClass('active').siblings().removeClass('active');
+            old.eq(prevIndex).insertBefore('.carousel-content li:eq(0)');
+            // console.log('从左到右')
+
+
+            $('.carousel-content').css({
+                'margin-left': '-300px'
+            }).animate({
+                'margin-left': '0'
+            }, 2000)
+        })
+    
+
+        // $('.prev').click(function () {
+        //     console.log($('.carousel-content li').eq(3).prependTo('.carousel-content'))
+        // })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  background: #718c98;
+}
+.big {
+  width: 300px;
+  margin: 100px auto;
+  position: relative;
+}
+.big .big-box {
+  width: 450px;
+  height: 300px ;
+  border-radius: 20px;
+}
+.big .big-box img:first-child {
+  position: relative;
+  opacity: 1;
+}
+.big .big-box img {
+  width: 450px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  vertical-align: middle;
+  border-radius: 30px;
+  transition: all 3s;
+}
+.big .but {
+  width: 450px;
+  position: absolute;
+  bottom: 130px;
+}
+.big .but #but1 {
+  float: left;
+  background: none;
+  color: #e9eeef;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+.big .but #but2 {
+  float: right;
+  background: none;
+  color: #e9eeef;
+  opacity: 0.7;
+  border-radius: 10px;
+}
+.paganation{
+    position: absolute;
+    top: 265px;
+    left: 180px;
+}
+.paganation i:first-child{
+  background: white;
+}
+.paganation i {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #53a6e2;  
+  font-size: 0;
+  margin-left: 10px;
+}

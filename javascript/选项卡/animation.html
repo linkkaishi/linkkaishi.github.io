@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="boxa"></div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+            background: #4a3939;
+        }
+
+        div.box {
+            background: lightblue;
+            width: 320px;
+            height: 320px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .box .boxa {
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+        }
+    </style>
+    <script>
+        var box = document.querySelector('.box');
+        var boxa = document.querySelector('.boxa');
+        var boxastyle = boxa.currentStyle ? boxa.currentStyle : window.getComputedStyle(boxa, null);
+        var boxawidth = parseInt(boxastyle.width);
+        var boxaheight = parseInt(boxastyle.height);
+        var boxaleft = parseInt(boxastyle.left);
+        var boxatop = parseInt(boxastyle.top);
+
+        var range = 300;
+        var speed = 5;
+        var moveright = function () {
+            boxaleft += speed;
+            boxa.style.left = boxaleft + 'px';
+        };
+        var movebottom = function () {
+            boxatop += speed;
+            boxa.style.top = boxatop + 'px';
+        };
+        var moveleft = function () {
+            boxaleft -= speed;
+            boxa.style.left = boxaleft + 'px';
+        };
+        var movetop = function () {
+            boxatop -= speed;
+            boxa.style.top = boxatop + 'px';
+        };
+         box.onclick =function(){
+        var zhuangdong = setInterval(function () {
+            if (boxaleft < 300 && boxatop === 0) {
+                console.log('right');
+                moveright();
+            } else if (boxaleft === 300 && boxatop < 300) {
+                console.log('bottom');
+                movebottom();
+            } else if (boxaleft <= 300 && boxatop === 300 && (boxaleft !== 0)) {
+                console.log('left');
+                moveleft();
+            } else if (boxaleft === 0 && boxatop <= 300) {
+                console.log('top');
+                movetop();
+            }
+        }, 50);
+     }
+   
+    </script>
+</body>
+
+</html>

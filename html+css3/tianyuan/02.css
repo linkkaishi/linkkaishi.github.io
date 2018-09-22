@@ -1,0 +1,351 @@
+body{
+	margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+	padding:0 0;
+	margin:0 0;
+}
+p{
+	padding:0 0;
+	margin:0 0;
+}
+header{
+	background: url(img/banner.jpg);
+	background-size: cover;
+	padding-top: 15px;
+	/*overflow: hidden;*/
+}
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.fl{
+	float: left;
+}
+nav.top ul li{
+	float: left;
+	line-height: 54px;
+	padding-top: 4px;
+}
+nav.top ul li a{
+	margin: 0 15px;
+	color: white;
+	text-decoration: none;
+	transform: all .3s;
+}
+nav.top ul li:after{
+	content: "/";
+	color: white;
+}
+nav.top ul li:first-of-type a{
+	color: yellow;
+	border-top: 4px solid yellow;
+}
+nav.top ul li:last-of-type:after{
+	content: "";
+}
+nav.top ul li a:hover {
+	color: yellow;
+	border-top: 4px solid yellow;
+}
+.fr{
+	float: right;
+}
+nav.top{
+	background: rgba(0, 0, 0, 0.41);
+	width: 1140px;
+	margin: 0 auto;
+	overflow: hidden;
+	height: 54px;
+    /*padding-top: 4px;*/
+}
+/*form*/
+nav.top form{
+	line-height: 54px;
+}
+nav.top form input[type=submit] {
+	background: url(img/search.png) no-repeat;
+	padding: 0;
+	width: 30px;
+	height: 22px;
+	border: none;
+	background-position: center;
+	margin-right: 0;
+	position: absolute;
+	right: 25px;
+	top: 16px;
+	cursor: pointer;
+}
+nav.top form input{
+	background: transparent;
+	border: 1 px solid white;
+	outline: none;
+	color: white;
+	padding: 5px 10px;
+	margin-right: 20px;
+}
+nav.top form{
+	position: relative;
+}
+/*center*/
+@font-face {
+	font-family: xxx;
+	src: url(img/xjlFont.fon);
+}
+
+header .center {
+	text-align: center;
+	margin: 200px 0 0 0;
+}
+header .center h1 {
+	font-family: 'xxx',"微软雅黑";
+	font-size: 72px;
+	color: white;
+	border-top: 5px solid white;
+	border-bottom: 5px solid white;
+	display: inline;
+}
+/**/
+.wrap {
+	padding: 4em 0;
+	width: 1140px;
+	margin: 0 auto;
+}
+
+.contactus h3 {
+	font-size: 3.5em;
+	text-transform: capitalize;
+	color: #394c53;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 600;
+	text-align: center;
+}
+.contactus form{
+	line-height: 50px;
+}
+
+.contactus form label {
+	width: 360px;
+	margin: 10px;
+	float: left;
+}
+
+.contactus form label span {
+	font-weight: bold;
+}
+
+.contactus form label:nth-of-type(4) {
+	width: 1120px;
+}
+
+.contactus form label input {
+	width: 338px;
+}
+
+.contactus form label textarea {
+	width: 1098px;
+	height: 500px;
+	resize: none;
+}
+
+.contactus form label input,
+.contactus form label textarea {
+	padding: 10px;
+	border: 1px solid lightgray;
+	transition: all .3s;
+	outline: none;
+	color: brown;
+	margin-top: 5px;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.contactus form label input:hover,
+.contactus form label textarea:hover {
+	border: 1px solid brown;
+}
+
+.contactus form input[type=submit] {
+	background: #16A667;
+	border: none;
+	color: white;
+	padding: 10px 30px;
+	margin-left: 10px;
+	transition: all .3s;
+}
+
+.contactus form input[type=submit]:hover {
+	background: orange;
+}
+/*
+ */
+.upcom{
+	background: #333;
+	overflow: hidden;
+	padding: 4em 0;
+}
+body,
+p,
+dl,
+dt,
+dd {
+	margin: 0;
+}
+.up1{
+	width: 1170px;
+	margin: 0 auto;
+}
+.up2{
+	width: 33.33%;
+	float: left;
+}
+.up3{
+	width: 33.33%;
+	float: left;
+}
+.up4{
+	width: 33.33%;
+	float: left;
+}
+section.upcom h3{
+	color: white;
+	font-size: 24px;
+	line-height: 85px;
+}
+section.upcom .up2 dl{
+	margin: 10px 0;
+	overflow: hidden;
+}
+section.upcom .up2 dl dt{
+	width: 70px;
+	float: left;
+}
+section.upcom .up2 dl dt img{
+	max-width: 100%;
+}
+section.upcom .up2 dl dd{
+	width: 270px;
+	float: right;
+	margin-left: 20px;
+}
+section.upcom .up2 dl dd a{
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	line-height: 24px;
+}
+section.upcom .up2 dl dd p{
+	color: lightslategray;
+}
+
+/*section.upcom .up3 li{
+	color: gainsboro;
+	list-style: none;
+	background: url(img/list-arrow.png) no-repeat;
+	background-position: left center;
+	padding-left: 20px;
+	line-height: 30px;
+}*/
+section.upcom .up3 li a{
+	text-decoration: none;
+	/*color: gainsboro;*/
+	list-style: none;
+	background: url(img/list-arrow.png) no-repeat;
+	background-position: left center;
+	padding-left: 20px;
+	line-height: 40px;
+	font-size: 1em;
+    line-height: 1.8em;
+    color: #999;
+    padding: 6px 24px;
+}
+section.upcom .up4 dl{
+	overflow: hidden;
+	margin: 20px 0;
+}
+section.upcom .up4 dl dt{
+	width: 40px;
+	height: 40px;
+	float: left;
+	background:url(img/img-sprite1.png) /*-220px 0*/;
+}
+section.upcom .up4 dl:nth-of-type(1) dt {
+	background-position: -220px 0px;
+}
+section.upcom .up4 dl:nth-of-type(2) dt {
+	background-position: -260px 0px;
+}
+section.upcom .up4 dl:nth-of-type(3) dt {
+	background-position: -300px 0px;
+}
+section.upcom .up4 dl dd{
+	width: 300px;
+	float: right;
+	margin-left: 20px;
+}
+section.upcom .up4 dl dd p{
+	color: white;
+}
+section.upcom .up4 dl dd a{
+	text-decoration: none;
+	color: white;
+}
+/*
+ */
+footer {
+	 padding: 4em 0;
+	 text-align: center;
+	 background:#eee;
+}
+.f1{
+	width: 1170px;
+	margin: 0 auto;
+}
+footer .icons a {
+	width: 55px;
+	height: 55px;
+	background: url(img/img-sprite1.png) no-repeat;
+	display: inline-block;
+	margin: 10px;
+}
+div.bottom-menu a{
+	width: 55px;
+	height: 55px;
+	margin: 10px;
+	padding-top: 10px;
+}
+footer .icons p{
+	padding: 10px;
+}
+
+footer .icons a:nth-of-type(1) {
+	background-position-x: 0px;
+}
+
+footer .icons a:nth-of-type(2) {
+	background-position-x: -55px;
+}
+
+footer .icons a:nth-of-type(3) {
+	background-position-x: -110px;
+}
+
+footer .icons a:nth-of-type(4) {
+	background-position-x: -165px;
+}
+
+footer .bottom-menu a {
+	color: #333333;
+	text-decoration: none;
+	margin: 10px 20px;
+}
+
+footer p a {
+	text-decoration: none;
+	color: #16A667;
+}
+
+footer p a:hover {
+	text-decoration: underline;
+}

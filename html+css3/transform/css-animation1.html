@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				display: inline-block;
+				background: red;
+				position: relative;
+				animation: big .5s;
+			  -webkit-animation: big 5s;
+			}
+			@keyframes big{
+				0% {top: 0;left: 0;background: red;}
+				25%{top: 0;left: 100px;background: yellow;}
+				50%{top: 100px;left: 100px;background: black;}
+				75%{top: 100px;left: 0;background: blueviolet;}
+				700%{top: 0;left: 0;background: red;}		
+			}
+			 @-webkit-keyframes big{
+				0% {top: 0;left: 0;background: red;}
+				25%{top: 0;left: 100px;background: yellow;}
+				50%{top: 100px;left: 100px;background: black;}
+				75%{top: 100px;left: 0;background: blueviolet;}
+				700%{top: 0;left: 0;background: red;}		
+			}
+		</style>
+	</body>
+</html>
