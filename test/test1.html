@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h3 style="text-align: center">员工信息</h3>
+    <table style="border:1px; width:50%; text-align:center ;margin: 0 auto">
+        <tr>
+            <th></th>
+            <th>姓名</th>
+            <th>薪水</th>
+            <th>年龄</th>
+        </tr>
+        <tr class="a">
+            <td>
+                <input type="checkbox" value="1" name="check" onclick="dianji()" />
+            </td>
+            <td>
+                张三
+            </td>
+            <td>
+                20000
+            </td>
+            <td>
+                23
+            </td>
+        </tr>
+        <tr class="b">
+            <td>
+                <input type="checkbox" value="1" name="check" onclick="dianji()" />
+            </td>
+            <td>
+                李四
+            </td>
+            <td>
+                22000
+            </td>
+            <td>
+                22
+            </td>
+        </tr>
+        <tr class="a">
+            <td>
+                <input type="checkbox" value="1" name="check" onclick="dianji()" />
+            </td>
+            <td>
+                王五
+            </td>
+            <td>
+                14000
+            </td>
+            <td>
+                26
+            </td>
+        </tr>
+        <tr class="b">
+            <td>
+                <input type="checkbox" value="1" name="check" onclick="dianji()" />
+            </td>
+            <td>
+                马六
+            </td>
+            <td>
+                15000
+            </td>
+            <td>
+                21
+            </td>
+        </tr>
+        <style>
+            table {
+                background-color: #CCC
+            }
+
+            .a {
+                background-color: #CFF;
+            }
+
+            .b {
+                background-color: #FFC;
+            }
+
+            .c {
+                background-color: #FF0;
+            }
+        </style>
+
+        <script>
+            function dianji() {
+                $("table :checkbox:checked").parent().parent().addClass("c");
+                $("table :checkbox").not("input:checked").parent().parent().removeClass("c");
+
+            }
+        </script>
+
+
+</body>
+
+</html>
