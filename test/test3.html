@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="carousel">
+        <div class="carousel-content">
+            <li class="a"></li>
+            <li class="b"></li>
+            <li class="c"></li>
+            <li class="d"></li>
+        </div>
+        <div class="carousel-control">
+            <span class="prev">prev</span>
+            <span class="next">next</span>
+        </div>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            li {
+                list-style: none;
+            }
+
+            .carousel {
+                width: 300px;
+                height: 200px;
+                background: red;
+                margin: 0 auto;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .carousel .carousel-content {
+                width: 1200px;
+                /* transition: all 3s; */
+            }
+
+            .carousel .carousel-content li {
+                width: 300px;
+                height: 200px;
+                float: left;
+            }
+
+            .carousel .carousel-content li.a {
+                background: #c5e8c5;
+            }
+
+            .carousel .carousel-content li.b {
+                background: #60cab6;
+            }
+
+            .carousel .carousel-content li.c {
+                background: lightblue;
+            }
+
+            .carousel .carousel-content li.d {
+                background: lightseagreen;
+            }
+
+            .carousel .carousel-control {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                height: 36px;
+            }
+
+            .carousel .carousel-control span {
+                line-height: 36px;
+                background:#e2d8c5;
+                display: inline-block;
+            }
+
+            .carousel .carousel-control span.prev {
+                float: left;
+            }
+
+            .carousel .carousel-control span.next {
+                float: right;
+            }
+        </style>
+        <script>
+        var old = $('.carousel-content li');
+        $('.next').click(function () {
+            var nextIndex = old.index($('.carousel-content li:eq(0)')) + 1;
+            if (nextIndex >= old.length) {
+                nextIndex = 0;
+            }
+            old.eq(nextIndex).insertAfter('.carousel-content li:eq(0)');
+            $('.carousel-content li').eq(0).animate({
+                'margin-left': "-300px"
+            }, 2000, function () {
+                $('.carousel-content li').eq(0).css('margin-left', "0").appendTo('.carousel-content');
+            })
+            $('.carousel-pagination i').eq(nextIndex).addClass('active').siblings().removeClass('active');
+        })
+
+        // 上一张
+        $('.prev').click(function () {
+            var prevIndex = old.index($('.carousel-content li:eq(0)')) - 1;
+            if (prevIndex < 0) {
+                prevIndex = old.length - 1;
+            }
+            $('.carousel-pagination i').eq(prevIndex).addClass('active').siblings().removeClass('active');
+            old.eq(prevIndex).insertBefore('.carousel-content li:eq(0)');
+            
+
+            $('.carousel-content').css({
+                'margin-left': '-300px'
+            }).animate({
+                'margin-left': '0'
+            }, 2000)
+        })
+    
+        
+        </script>
+</body>
+
+</html>
