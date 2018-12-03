@@ -47,4 +47,5 @@ http://linkkaishi.github.io/jquery/jq-效果- animate.html<br> -->
 [test2](http://linkkaishi.github.io/test/test2.html)http://linkkaishi.github.io/test/test2.html<br>
 [test3](http://linkkaishi.github.io/test/test3.html)http://linkkaishi.github.io/test/test3.html<br>
 
-
+## vue 
+[vue-todo](http://linkkaishi.github.io/vue/todo.html)http://linkkaishi.github.io/vue/todo.html<br>
