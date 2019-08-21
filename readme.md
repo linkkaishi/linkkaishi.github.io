@@ -50,7 +50,7 @@ http://linkkaishi.github.io/jquery/jq-效果- animate.html<br> -->
 ## vue 
 [vue-todo](http://linkkaishi.github.io/vue/todo.html)http://linkkaishi.github.io/vue/todo.html<br>
 
-[library](http://linkkaishi.github.io/dist/index.html)http://linkkaishi.github.io/dist/index.html
+[library](http://linkkaishi.github.io/dist/index.html)
 
 
 
