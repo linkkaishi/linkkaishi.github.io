@@ -52,7 +52,7 @@ http://linkkaishi.github.io/jquery/jq-效果- animate.html<br> -->
 
 [library](http://linkkaishi.github.io/dist/index.html)http://linkkaishi.github.io/dist/index.html<br>
 
-[oa](http://linkkaishi.github.io/oa/index.html)http://linkkaishi.github.io/oa/index.html<br>
+<!-- [oa](http://linkkaishi.github.io/oa/index.html)http://linkkaishi.github.io/oa/index.html<br> -->
 
 
 
